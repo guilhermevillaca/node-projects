@@ -1,8 +1,12 @@
 const express = require('express');
 const mysql = require('mysql2');
-
+const cors = require('cors');
 const app = express();
+
 const PORT = 3000;
+app.use(cors());
+
+app.use(express.static('public'));
 
 // Configuração do banco de dados
 const connection = mysql.createConnection({
@@ -46,6 +50,13 @@ function inicializarBanco() {
   });
 
   console.log("Banco de dados inicializado!");
+
+  inserirPessoa('João');
+  inserirPessoa('Maria');
+  inserirUsuario('João', 'joao@gmail.com');
+  inserirUsuario('Maria', 'maria@gmail.com');
+
+  console.log("Dados inseridos!");
 }
 
 // Função genérica para executar queries
@@ -105,10 +116,7 @@ app.get('/listarUsuarios', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  inserirPessoa('João');
-  inserirPessoa('Maria');
-  inserirUsuario('João', 'joao@gmail.com');
-  inserirUsuario('Maria', 'maria@gmail.com');
+ 
   
   res.send('Banco de dados inicializado e dados inseridos!');
 });
