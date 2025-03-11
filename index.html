@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumindo API Node.js</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        button { margin: 10px; padding: 10px; cursor: pointer; }
+        ul { list-style: none; padding: 0; }
+    </style>
+</head>
+<body>
+    <h1>Consumindo API Node.js</h1>
+    
+    <button onclick="listarUsuarios()">Listar Usuários</button>
+    <button onclick="listarPessoas()">Listar Pessoas</button>
+    
+    <h2>Usuários:</h2>
+    <ul id="usuarios-lista"></ul>
+
+    <h2>Pessoas:</h2>
+    <ul id="pessoas-lista"></ul>
+
+    <script>
+        async function listarUsuarios() {
+            const response = await fetch('http://localhost:3000/listarUsuarios');
+            const data = await response.text(); // API retorna HTML
+            document.getElementById('usuarios-lista').innerHTML = data;
+        }
+
+        async function listarPessoas() {
+            const response = await fetch('http://localhost:3000/listarPessoas');
+            const data = await response.text(); // API retorna HTML
+            document.getElementById('pessoas-lista').innerHTML = data;
+        }
+    </script>
+</body>
+</html>
