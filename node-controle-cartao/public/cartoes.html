@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Cartões</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gerenciar Cartões</h1>
+    <form id="cartaoForm">
+        <input type="text" id="nome" placeholder="Nome do Cartão" required>
+        <input type="text" id="bandeira" placeholder="Bandeira" required>
+        <input type="number" id="limite" placeholder="Limite" required>
+        <input type="text" id="validade" placeholder="Validade (MM/AA)" required>
+        <input type="number" id="fechamento" placeholder="Dia de Fechamento" required>
+        <input type="number" id="vencimento" placeholder="Dia de Vencimento" required>
+        <button type="submit">Adicionar Cartão</button>
+    </form>
+    
+    <h2>Cartões Cadastrados</h2>
+    <ul id="listaCartoes"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>

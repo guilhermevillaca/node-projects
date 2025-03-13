@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Gastos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Registrar Gastos</h1>
+    <form id="gastoForm">
+        <select id="cartao"></select> <!-- Populado via script.js -->
+        <input type="text" id="descricao" placeholder="Descrição da Compra" required>
+        <input type="number" id="valorTotal" placeholder="Valor Total" required>
+        <input type="number" id="parcelas" placeholder="Número de Parcelas" required>
+        <input type="date" id="dataCompra" required>
+        <button type="submit">Adicionar Gasto</button>
+    </form>
+
+    <h2>Gastos Registrados</h2>
+    <ul id="listaGastos"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
