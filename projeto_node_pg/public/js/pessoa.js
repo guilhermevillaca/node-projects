@@ -1,4 +1,4 @@
-function buscarPessoa() {
+function buscar() {
 
     var url = '/pessoa';
 
@@ -12,7 +12,7 @@ function buscarPessoa() {
 
 }
 
-function buscarPessoaPorId() {
+function buscarPorId() {
     const id = 1; // Substituir pelo ID desejado
     fetch(`http://localhost:3000/pessoa/${id}`)
         .then(response => response.json())
@@ -21,7 +21,7 @@ function buscarPessoaPorId() {
 
 }
 
-function inserirPessoa() {
+function inserir() {
 
     const novaPessoa = { nome: "João Silva" };
 
@@ -37,7 +37,7 @@ function inserirPessoa() {
 
 }
 
-function atualizarPessoa() {
+function atualizar() {
     const id = 1; // Substituir pelo ID desejado
     const pessoaAtualizada = { nome: "Maria Souza" };
 
@@ -52,7 +52,7 @@ function atualizarPessoa() {
 
 }
 
-function deletarPessoa() {
+function deletar() {
     const id = 1; // Substituir pelo ID desejado
 
     fetch(`http://localhost:3000/pessoa/${id}`, {

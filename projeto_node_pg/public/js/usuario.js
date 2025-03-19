@@ -1,6 +1,6 @@
-function buscarPessoa() {
+function buscar() {
 
-    var url = '/pessoa';
+    var url = '/usuario';
 
     fetch(url)
         .then((response) => response.json())
@@ -12,20 +12,20 @@ function buscarPessoa() {
 
 }
 
-function buscarPessoaPorId() {
+function buscarPorId() {
     const id = 1; // Substituir pelo ID desejado
-    fetch(`http://localhost:3000/pessoa/${id}`)
+    fetch(`http://localhost:3000/usuario/${id}`)
         .then(response => response.json())
         .then(data => console.log("Pessoa encontrada:", data))
         .catch(error => console.error("Erro ao buscar pessoa:", error));
 
 }
 
-function inserirPessoa() {
+function inserir() {
 
     const novaPessoa = { nome: "João Silva" };
 
-    fetch("http://localhost:3000/pessoa", {
+    fetch("http://localhost:3000/usuario", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(novaPessoa)
@@ -37,11 +37,11 @@ function inserirPessoa() {
 
 }
 
-function atualizarPessoa() {
+function atualizar() {
     const id = 1; // Substituir pelo ID desejado
     const pessoaAtualizada = { nome: "Maria Souza" };
 
-    fetch(`http://localhost:3000/pessoa/${id}`, {
+    fetch(`http://localhost:3000/usuario/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(pessoaAtualizada)
@@ -52,10 +52,10 @@ function atualizarPessoa() {
 
 }
 
-function deletarPessoa() {
+function deletar() {
     const id = 1; // Substituir pelo ID desejado
 
-    fetch(`http://localhost:3000/pessoa/${id}`, {
+    fetch(`http://localhost:3000/usuario/${id}`, {
         method: "DELETE"
     })
         .then(response => response.text())
