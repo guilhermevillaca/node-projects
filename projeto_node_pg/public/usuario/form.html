@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="/script.js"></script>
+    <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body onload="verificarIdUsuario()">
 
     <div class="container">
 
@@ -25,11 +25,27 @@
             </nav>
 
             <hr>
+
         </div>
 
         <div class="principal">
 
-            <h1>Sistema com NodeJS</h1>
+            <h1>Cadastrar Usuário</h1>
+
+            <form id="formUsuario" onsubmit="return salvarUsuario()">
+
+                <label for="id">ID:</label>
+                <input type="text" name="id" id="id" placeholder="ID">
+
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Nome">
+
+                <label for="email">E-mail:</label>
+                <input type="text" name="email" id="email" placeholder="E-mail">
+
+                <button type="submit">Salvar</button>
+
+            </form>
 
         </div>
     </div>

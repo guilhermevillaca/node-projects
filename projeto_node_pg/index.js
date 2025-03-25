@@ -9,21 +9,28 @@ app.use(express.json()); // Adiciona suporte para JSON no body das requisições
 const conexao = new Pool({
     host: "localhost",
     user: "postgres",
-    password: "123456",
+    password: "root",
     database: "node2",
     port: 5432
 });
 
 conexao.connect()
-    .then(() => {
+    .then(async () => {
         console.log("Conectado ao PostgreSQL!");
-        inicializarBanco();
-        inserirPessoa("Guilherme");
-        inserirUsuario("Guilherme Villaca", "guidvillaca@gmail.com");
+        await inicializarBanco();
+        await inserirPessoa("Guilherme");
+        await inserirPessoa("Brayan");
+        await inserirPessoa("Bruno");
+        await inserirPessoa("Felipe");
+        await inserirPessoa("Giovanni");
+        await inserirPessoa("Jonas");
+        await inserirPessoa("Pedro");
+        await inserirPessoa("Rogério");
+        await inserirUsuario("Guilherme Villaca", "guidvillaca@gmail.com");
     })
     .catch(err => console.error("Erro de conexão:", err));
 
-function inicializarBanco() {
+async function inicializarBanco() {
     const queries = [
         `CREATE TABLE IF NOT EXISTS usuario (
             id SERIAL PRIMARY KEY,
@@ -38,15 +45,15 @@ function inicializarBanco() {
         `TRUNCATE TABLE pessoa RESTART IDENTITY`
     ];
 
-    queries.forEach(async (query) => {
+    for (const query of queries) {
         console.log(query);
         try {
             await conexao.query(query);
-            console.log("Tabelas criadas com sucesso!");
+            console.log("Query executada com sucesso!");
         } catch (error) {
-            console.error("Erro ao criar tabelas:", error);
+            console.error("Erro ao executar query:", error);
         }
-    });
+    }
 }
 
 // Inserção na tabela pessoa

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="/script.js"></script>
+    <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body onload="verificarIdPessoa()">
 
     <div class="container">
 
@@ -25,16 +25,28 @@
             </nav>
 
             <hr>
+            
         </div>
 
         <div class="principal">
+            <h1>Cadastrar Nova Pessoa</h1>
 
-            <h1>Sistema com NodeJS</h1>
+            <form id="formPessoa" onsubmit="return salvarPessoa()">
+
+                <label for="id">ID:</label>
+                <input type="text" name="id" id="id" placeholder="ID">
+
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Nome">
+
+                <button type="submit">Salvar</button>
+
+            </form>
 
         </div>
     </div>
     
-
+    
 
 </body>
 </html>
