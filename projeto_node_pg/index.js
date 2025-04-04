@@ -9,7 +9,7 @@ app.use(express.json()); // Adiciona suporte para JSON no body das requisições
 const conexao = new Pool({
     host: "localhost",
     user: "postgres",
-    password: "123456",
+    password: "root",
     database: "node2",
     port: 5432
 });

@@ -1,6 +1,12 @@
-function buscarPessoa() {
+import Pessoa from './js/pessoa.js';
 
-    var url = '/pessoa';
+
+function buscarPessoa() {
+    const pessoa = new Pessoa();
+    
+    pessoa.buscar();
+
+    /*var url = '/pessoa';
 
     fetch(url)
         .then((response) => response.json())
@@ -9,8 +15,9 @@ function buscarPessoa() {
         }).catch((error) => {
             console.error(error);
         });
-
+*/
 }
+window.buscarPessoa = buscarPessoa;
 
 function buscarPessoaPorId() {
     const id = 1; // Substituir pelo ID desejado
